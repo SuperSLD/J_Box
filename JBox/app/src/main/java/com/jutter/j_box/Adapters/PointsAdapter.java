@@ -51,8 +51,8 @@ public class PointsAdapter extends BaseAdapter {
             view = inflater.inflate(R.layout.point_list_item, parent, false);
         }
 
-        ((TextView) view.findViewById(R.id.pointName)).setText("Название: " + points.get(position).getName());
-        ((TextView) view.findViewById(R.id.count)).setText("Количество ячеек: " + points.get(position).getCount());
+        ((TextView) view.findViewById(R.id.pointName)).setText("Location: " + points.get(position).getName());
+        ((TextView) view.findViewById(R.id.count)).setText("Count box: " + points.get(position).getCount());
 
         Button pointInfoBtn = view.findViewById(R.id.pointInfo);
         pointInfoBtn.setOnClickListener(v -> {
