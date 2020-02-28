@@ -1,28 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/backgraund">
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login"
-        android:textSize="30dp"
         android:gravity="center"
-        android:layout_marginTop="50dp"/>
+        android:text="Login"
+        android:textColor="@android:color/white"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="20dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            app:cardCornerRadius="20dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -35,6 +47,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:hint="Phone number"
+                    android:padding="20dp"
                     android:inputType="phone" />
 
                 <EditText
@@ -43,7 +56,11 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:hint="PIN"
-                    android:inputType="numberPassword" />
+                    android:padding="20dp"
+                    android:colorControlActivated="@android:color/white"
+                    android:colorControlNormal="@android:color/white"
+                    android:inputType="numberPassword"
+                    android:background="@drawable/backgraund_edit_text"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -54,7 +71,21 @@
             android:layout_marginTop="10dp"
             android:text="Login"
             android:textAllCaps="false"
-            android:textSize="25dp" />
+            android:textSize="25dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@android:color/white"
+            android:background="@drawable/button_back"/>
     </LinearLayout>
 
-</LinearLayout>
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_launcher_round" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

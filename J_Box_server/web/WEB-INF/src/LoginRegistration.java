@@ -22,15 +22,15 @@ public class LoginRegistration extends HttpServlet {
             writer.print(Long.toString(c));
         } else if (req.getParameter("act").equals("log")) {
             try {
-                ResultSet rs = connector.executeQuery("SELECT pin FROM users WHERE number='"+req.getParameter("number")+"'");
+                ResultSet rs = connector.executeQuery("SELECT pin, name FROM users WHERE number='"+req.getParameter("number")+"'");
                 if (rs.next()) {
                     if (rs.getString("pin").equals(req.getParameter("pin"))) {
-                        writer.print("ok");
+                        writer.print("ok<!>"+rs.getString("name"));
                     } else {
-                        writer.print("invalid pin");
+                        writer.print("invalid pin<!>");
                     }
                 } else {
-                    writer.print("no user");
+                    writer.print("no user<!>");
                 }
             } catch (Exception e) {
                 e.printStackTrace();

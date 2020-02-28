@@ -1,6 +1,8 @@
 package com.jutter.j_box;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,10 +15,15 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class RegistrationActivity extends AppCompatActivity {
+
+    private SharedPreferences mSettings;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
+
+        mSettings = getSharedPreferences("appSettings", Context.MODE_PRIVATE);
 
         Logger.getLogger("mylog").log(Level.INFO, "on create");
         URLSendRequest url = new URLSendRequest(MainActivity.SERVER_IP, 5000);
