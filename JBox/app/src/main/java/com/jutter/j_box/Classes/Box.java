@@ -10,6 +10,7 @@ public class Box {
     private String endDate;
     private int userId;
     private String type;
+    private String place;
 
     public Box (int id, int pointId, String endDate, int userId, String type) {
         this.id = id;
@@ -67,5 +68,13 @@ public class Box {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getPlace() {
+        return place;
+    }
+
+    public void setPlace(String place) {
+        this.place = place;
     }
 }
