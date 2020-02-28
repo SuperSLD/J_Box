@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ListView pointsListView = findViewById(R.id.pointsListView);
-
         PointsAdapter adapter = new PointsAdapter(this, points);
     }
 }
