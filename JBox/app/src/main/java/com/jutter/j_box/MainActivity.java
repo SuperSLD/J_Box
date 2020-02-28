@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         points = new ArrayList<>();
         ListView pointsListView = findViewById(R.id.pointsListView);
 
+
         URLSendRequest url = new URLSendRequest(MainActivity.SERVER_IP, 5000);
 
         String data = url.get("point").replaceAll("\n", "");
