@@ -44,8 +44,14 @@ public class LoginActivity extends AppCompatActivity {
                 editor.putString("number", number);
                 editor.putString("pin", pin);
                 editor.putString("name", result.split("<!>")[1]);
+                editor.putString("id", result.split("<!>")[2]);
                 editor.apply();
             }
+        });
+
+        findViewById(R.id.reg).setOnClickListener(v -> {
+            Intent intent = new Intent(this, RegistrationActivity.class);
+            startActivity(intent);
         });
     }
 }

@@ -1,6 +1,7 @@
 package com.jutter.j_box.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.jutter.j_box.Classes.Point;
+import com.jutter.j_box.MainActivity;
+import com.jutter.j_box.PointInfoActivity;
 import com.jutter.j_box.R;
 
 import java.util.ArrayList;
@@ -55,9 +58,7 @@ public class PointsAdapter extends BaseAdapter {
         ((TextView) view.findViewById(R.id.count)).setText("Count box: " + points.get(position).getCount());
 
         Button pointInfoBtn = view.findViewById(R.id.pointInfo);
-        pointInfoBtn.setOnClickListener(v -> {
-
-        });
+        pointInfoBtn.setOnClickListener(v -> ((MainActivity) context).openPointInfo(points.get(position)));
         return view;
     }
 }

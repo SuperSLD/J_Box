@@ -93,8 +93,8 @@
             android:textAllCaps="false"
             android:textSize="25dp"
             android:layout_gravity="center_horizontal"
-            android:textColor="@android:color/white"
-            android:background="@drawable/button_back"/>
+            android:textColor="@color/colorPrimary"
+            style="@style/Widget.AppCompat.Button.Borderless"/>
     </LinearLayout>
 
     <ImageView

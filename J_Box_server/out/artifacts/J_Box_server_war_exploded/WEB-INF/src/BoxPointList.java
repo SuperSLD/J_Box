@@ -22,7 +22,7 @@ public class BoxPointList extends HttpServlet {
         try {
             ResultSet rs = connector.executeQuery("SELECT id, location, size FROM boxPoint");
             while (rs.next()) {
-                writer.print(rs.getString("id")+"<!>"+rs.getString("location")+"<!>"+rs.getString("size")+"<!!>");
+                writer.print(rs.getString("id") + "<!>" + rs.getString("location") + "<!>" + rs.getString("size") + "<!!>");
             }
         } catch (SQLException e) {
             e.printStackTrace();

@@ -2,39 +2,60 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:cardBackgroundColor="@color/back_item"
+        app:cardCornerRadius="10dp">
 
         <LinearLayout
+            android:padding="20dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/address"
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:hint="Address" />
+                app:cardCornerRadius="20dp">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-            <EditText
-                android:id="@+id/dateEnd"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="date"
-                android:hint="Date"/>
+                    <EditText
+                        android:id="@+id/address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:padding="20dp"
+                        android:inputType="textPersonName"
+                        android:hint="Address" />
+
+                    <EditText
+                        android:id="@+id/dateEnd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:padding="20dp"
+                        android:inputType="date"
+                        android:hint="Date"
+                        android:background="@drawable/backgraund_edit_text"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
             <Button
                 android:id="@+id/reserve"
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Reserve"
-                android:textAllCaps="false"/>
+                android:textColor="@color/colorAccent"
+                android:textAllCaps="false"
+                android:background="@drawable/drawable_border_primary"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </LinearLayout>

@@ -22,10 +22,10 @@ public class LoginRegistration extends HttpServlet {
             writer.print(Long.toString(c));
         } else if (req.getParameter("act").equals("log")) {
             try {
-                ResultSet rs = connector.executeQuery("SELECT pin, name FROM users WHERE number='"+req.getParameter("number")+"'");
+                ResultSet rs = connector.executeQuery("SELECT id,pin, name FROM users WHERE number='"+req.getParameter("number")+"'");
                 if (rs.next()) {
                     if (rs.getString("pin").equals(req.getParameter("pin"))) {
-                        writer.print("ok<!>"+rs.getString("name"));
+                        writer.print("ok<!>"+rs.getString("name")+"<!>"+rs.getString("id"));
                     } else {
                         writer.print("invalid pin<!>");
                     }

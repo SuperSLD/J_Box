@@ -21,4 +21,22 @@
         <servlet-name>pointList</servlet-name>
         <url-pattern>/point</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>boxinfo</servlet-name>
+        <servlet-class>BoxListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>boxinfo</servlet-name>
+        <url-pattern>/boxlist</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>updatebox</servlet-name>
+        <servlet-class>BoxUpdateServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>updatebox</servlet-name>
+        <url-pattern>/updatebox</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -19,9 +19,15 @@
 
             </intent-filter>
         </activity>
+        <activity android:name=".PointInfoActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+            </intent-filter>
+        </activity>
         <activity
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
-            android:name=".LoginActivity">
+            android:theme="@style/AppTheme2"
+            android:name=".UserInfoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,11 +35,17 @@
         </activity>
         <activity
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:name=".LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             android:name=".RegistrationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
