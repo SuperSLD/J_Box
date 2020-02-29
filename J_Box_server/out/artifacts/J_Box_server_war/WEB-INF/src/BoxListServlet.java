@@ -13,6 +13,7 @@ public class BoxListServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         PrintWriter writer = resp.getWriter();
+        if(connector == null) connector = new DBConnector();
         if (!connector.isOpen()) connector = new DBConnector();
         try {
             if (req.getParameter("act").equals("0")) {

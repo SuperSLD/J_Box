@@ -1,0 +1,6 @@
+---
+applications:
+- name: spring-music
+  memory: 1G
+  random-route: true
+#    JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'

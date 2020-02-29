@@ -39,4 +39,13 @@
         <servlet-name>updatebox</servlet-name>
         <url-pattern>/updatebox</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>car</servlet-name>
+        <servlet-class>Classes.CarsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>car</servlet-name>
+        <url-pattern>/car</url-pattern>
+    </servlet-mapping>
 </web-app>

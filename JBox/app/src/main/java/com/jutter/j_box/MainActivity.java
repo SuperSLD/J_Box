@@ -15,12 +15,15 @@ import com.jutter.j_box.Adapters.PointsAdapter;
 import com.jutter.j_box.Classes.Parametrs;
 import com.jutter.j_box.Classes.Point;
 import com.jutter.j_box.Classes.URLSendRequest;
+import com.jutter.j_box.Fragments.CarDialogFragment;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static final String SERVER_IP = "http://192.168.43.191:8080/";
+    public static final String SERVER_IP = "http://89.250.2.13:8080/J_Box_server_war/";
+    //public static final String SERVER_IP = "http://192.168.43.191:8080/";
+
     public ArrayList<Point> points;
 
     @Override
@@ -58,6 +61,11 @@ public class MainActivity extends AppCompatActivity {
             String[] pointString = objects[i].split("<!>");
             points.add(new Point(Integer.parseInt(pointString[0]), pointString[1], Integer.parseInt(pointString[2])));
         }
+
+        findViewById(R.id.button).setOnClickListener(v -> {
+            CarDialogFragment dialogFragment = new CarDialogFragment(this);
+            dialogFragment.show(getSupportFragmentManager(), "tag");
+        });
 
         PointsAdapter adapter = new PointsAdapter(this, points);
         pointsListView.setAdapter(adapter);

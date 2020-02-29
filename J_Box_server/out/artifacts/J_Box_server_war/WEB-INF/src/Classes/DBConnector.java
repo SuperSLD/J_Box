@@ -6,7 +6,8 @@ import java.util.Properties;
 public class DBConnector {
     private static final String dbClassName = "com.mysql.cj.jdbc.Driver";
     private static final String CONNECTION =
-                          "jdbc:mysql://localhost:3306/jutter?useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=" +
+                          //"jdbc:mysql://89.250.2.13:3306/jutter?useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=" +
+            "jdbc:mysql://localhost:3306/jutter?useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=" +
                                   "true&useLegacyDatetimeCode=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
 
     public Connection con;
@@ -20,8 +21,8 @@ public class DBConnector {
 
             // Properties for user and password. Here the user and password are both 'craig'
             Properties p = new Properties();
-            p.put("user","root");
-            p.put("password","299792458");
+            p.put("user","jutter");
+            p.put("password","j1488");
             //p.put("user","root");
             //p.put("password","299792458");
 

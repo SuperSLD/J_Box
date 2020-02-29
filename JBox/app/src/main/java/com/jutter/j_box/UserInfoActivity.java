@@ -16,6 +16,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.jutter.j_box.Adapters.BoxesAdapter;
+import com.jutter.j_box.Adapters.CarAdapter;
 import com.jutter.j_box.Adapters.ItemUserBoxAdapter;
 import com.jutter.j_box.Classes.Box;
 import com.jutter.j_box.Classes.Parametrs;
@@ -81,6 +82,13 @@ public class UserInfoActivity extends AppCompatActivity {
 
                 boxes.add(box);
             }
+
+            data = url.get("car?act=get&userId="+mSettings.getString("id", "")).replaceAll("\n", "");
+            Logger.getLogger("mylog").log(Level.INFO, "data= " + data);
+            objects = data.split("<!!>");
+
+            CarAdapter carAdapter = new CarAdapter(this, objects);
+
             ItemUserBoxAdapter adapter = new ItemUserBoxAdapter(this, boxes);
 
             LinearLayout newLinearLayout = new LinearLayout(getApplicationContext());
@@ -92,6 +100,16 @@ public class UserInfoActivity extends AppCompatActivity {
 
 
             LinearLayout linearLayout = findViewById(R.id.line1);
+            linearLayout.removeAllViews();
+            linearLayout.addView(newLinearLayout);
+
+            newLinearLayout = new LinearLayout(getApplicationContext());
+            newLinearLayout.setOrientation(LinearLayout.VERTICAL);
+
+            newLinearLayout.removeAllViews();
+            for(int i = 0 ; i < objects.length; i++)
+                newLinearLayout.addView(carAdapter.getView(i, null, newLinearLayout));
+            linearLayout = findViewById(R.id.line2);
             linearLayout.removeAllViews();
             linearLayout.addView(newLinearLayout);
 

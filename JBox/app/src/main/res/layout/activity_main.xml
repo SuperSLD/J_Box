@@ -11,6 +11,18 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <Button
+            android:layout_marginTop="5dp"
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Add car"
+            android:textColor="@android:color/white"
+            android:textAllCaps="false"
+            android:background="@drawable/drawable_border_primary"
+            android:layout_marginBottom="5dp"/>
+
         <ListView
             android:id="@+id/pointsListView"
             android:layout_width="match_parent"

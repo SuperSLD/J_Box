@@ -17,10 +17,11 @@ public class BoxPointList extends HttpServlet {
         resp.setCharacterEncoding("UTF-8");
 
         PrintWriter writer = resp.getWriter();
+        if(connector == null) connector = new DBConnector();
         if (!connector.isOpen()) connector = new DBConnector();
 
         try {
-            ResultSet rs = connector.executeQuery("SELECT id, location, size FROM boxPoint");
+            ResultSet rs = connector.executeQuery("SELECT id, location, size FROM boxpoint");
             while (rs.next()) {
                 writer.print(rs.getString("id") + "<!>" + rs.getString("location") + "<!>" + rs.getString("size") + "<!!>");
             }
